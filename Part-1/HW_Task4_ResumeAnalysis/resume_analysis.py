@@ -72,7 +72,17 @@ print("=============")
 # More info here: https://dbader.org/blog/meaning-of-underscores-in-python
 
 # Clean Punctuation
-_word_count = #YOUR CODE HERE#
+_word_count = set()
+for word in word_count:
+    _word_count.append(word_count)
+print(_word_count)
+
+punctuation2 = set(string.punctuation)
+_word_count = _word_count - punctuation2
+print(_word_count)
+
+# Hint: return only words that are not in string.punctuaton
+# Hint: consider using a list comprehension
 
 # Clean Stop Words
 stop_words = #YOUR CODE HERE#
