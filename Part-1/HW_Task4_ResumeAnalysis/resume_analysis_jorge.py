@@ -84,4 +84,5 @@ _word_count = [word for word in _word_count if word not in stop_words]
 sorted_words = []
 sorted_words = [word for word in sorted(_word_count, key = word_count.get, reverse=True)]
 
-print(sorted_words)
+var = sorted_words[:10]
+print(var)
