@@ -7,7 +7,7 @@ import os
 
 # Files to load and output (Remember to change these)
 file_to_load = os.path.join("raw_data", "paragraph_1.txt")
-file_to_output = os.path.join("analysis", "paragraph_analysis.txt")
+file_to_output = os.path.join("paragraph_analysis.txt")
 
 # String variable to hold the paragraph contents
 paragraph = ""
@@ -56,14 +56,18 @@ avg_word_count = sum(words_per_sentence_count) / float(len(words_per_sentence_co
 
 # Generate Paragraph Analysis Output
 #YOUR CODE HERE
+
+cleaned = (str(word_count), str(sentence_count), str(avg_letter_count), str(avg_word_count))
+
+# Print all of the results (to terminal)
+#YOUR CODE HERE
 print("Paragraph Analysis:") 
 print(f"Approximate Word Count: {str(word_count)}")
 print(f"Approximate Sentece Count: {str(sentence_count)}")
 print(f"Average Letter Count: {str(avg_letter_count)}")
-print(f"Average Sentence Length: {str(avg_word_count)}")
-# Print all of the results (to terminal)
-#YOUR CODE HERE
-     
+print(f"Average Sentence Length: {str(avg_word_count)}")     
     
 # Save the results to analysis text file
 #YOUR CODE HERE
+#with open(file_to_output, "w", newline="") as datafile:
+     
