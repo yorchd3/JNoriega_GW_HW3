@@ -57,8 +57,6 @@ avg_word_count = sum(words_per_sentence_count) / float(len(words_per_sentence_co
 # Generate Paragraph Analysis Output
 #YOUR CODE HERE
 
-cleaned = (str(word_count), str(sentence_count), str(avg_letter_count), str(avg_word_count))
-
 # Print all of the results (to terminal)
 #YOUR CODE HERE
 print("Paragraph Analysis:") 
@@ -69,5 +67,5 @@ print(f"Average Sentence Length: {str(avg_word_count)}")
     
 # Save the results to analysis text file
 #YOUR CODE HERE
-#with open(file_to_output, "w", newline="") as datafile:
-     
+with open(file_to_output, "w", newline="") as datafile:
+    datafile.write("Paragraph Analysis:" f" Approximate Word Count: {str(word_count)}" f" Approximate Sentece Count: {str(sentence_count)}" f" Average Letter Count: {str(avg_letter_count)}" f" Average Sentence Length: {str(avg_word_count)}")
