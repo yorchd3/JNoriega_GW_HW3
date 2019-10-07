@@ -85,14 +85,22 @@ with open(file_to_load) as emp_data:
 
         # Grab names, split them, and store them in a temporary variable
         split_name = row[1].split(" ")
-        emp_first_names.append(split_name[0])
-        emp_last_names.append(split_name[1])
 
         # Then save first and last name in separate lists
         # YOUR CODE HERE
+        emp_first_names.append(split_name[0])
+        emp_last_names.append(split_name[1])
+                
 
         # Grab DOB and reformat it
         # YOUR CODE HERE
+        from datetime import datetime
+        emp_dobs = row[2]
+     
+   #     str = '9-15-18'
+        date_object = datetime.strptime(emp_dobs, '%y-%m-%d')
+
+        print(date_object)
 
         # Then store it into a list
         # YOUR CODE HERE
