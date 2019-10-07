@@ -7,7 +7,7 @@ import os
 
 # Files to load and output (Remember to change these)
 file_to_load = os.path.join("employee_data.csv")
-file_to_output = os.path.join("analysis", "employee_data_reformatted.csv")
+file_to_output = os.path.join("employee_data_reformatted.csv")
 
 # Dictionary of states with abbreviations
 us_state_abbrev = {
@@ -69,8 +69,11 @@ emp_first_names = []
 emp_last_names = []
 emp_dobs = []
 emp_ssns = []
+emp_ssns2 = []
 emp_states = []
 emp_dobs2 =[]
+replacement =[]
+emp_states2 = []
 # Read the csv and convert it into a list of dictionaries
 with open(file_to_load) as emp_data:
     reader = csv.reader(emp_data)
@@ -108,19 +111,24 @@ with open(file_to_load) as emp_data:
 
         # Grab SSN and reformat it
         # YOUR CODE HERE
-                
+        emp_ssns = row[3]
+        reformed = emp_ssns
         # Then store it into a list
         # YOUR CODE HERE
+        emp_ssns2.append(reformed)
 
         # Grab the states and use the dictionary to find the replacement
         # YOUR CODE HERE
-
+        emp_states = row[4]
+        replacement = (us_state_abbrev[emp_states])
+        
         # Then store the abbreviation into a list
         # YOUR CODE HERE
+        emp_states2.append(replacement)
 
 # Zip all of the new lists together
 # YOUR CODE HERE
-myzip = zip(emp_ids, emp_first_names, emp_last_names, emp_dobs2, emp_ssns, emp_states)
+myzip = zip(emp_ids, emp_first_names, emp_last_names, emp_dobs2, emp_ssns2, emp_states2)
 
 # Write all of the election data to csv
 # YOUR CODE HERE
