@@ -97,13 +97,13 @@ with open(file_to_load) as emp_data:
         from datetime import datetime
         emp_dobs = row[2]
      
-   #     str = '9-15-18'
-        date_object = datetime.strptime(emp_dobs, '%y-%m-%d')
+        date_object = datetime.strptime(emp_dobs, '%Y-%m-%d')
 
-        print(date_object)
-
-        # Then store it into a list
+        emp_dobs[2] = date_object.strftime('%m-%d-%Y')
+    
+               # Then store it into a list
         # YOUR CODE HERE
+        emp_dobs.append(emp_dobs[2])
 
         # Grab SSN and reformat it
         # YOUR CODE HERE
@@ -119,7 +119,11 @@ with open(file_to_load) as emp_data:
 
 # Zip all of the new lists together
 # YOUR CODE HERE
-
+myzip = zip(emp_ids, emp_first_names, emp_last_names, emp_dobs, emp_ssns, emp_states)
 
 # Write all of the election data to csv
 # YOUR CODE HERE
+with open(file_to_output, "w", newline="") as datafile:
+        writer = csv.writer(datafile)
+        writer.writerows(myzip)
+        
