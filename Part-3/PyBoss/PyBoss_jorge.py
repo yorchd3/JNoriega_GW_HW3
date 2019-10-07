@@ -70,7 +70,7 @@ emp_last_names = []
 emp_dobs = []
 emp_ssns = []
 emp_states = []
-
+emp_dobs2 =[]
 # Read the csv and convert it into a list of dictionaries
 with open(file_to_load) as emp_data:
     reader = csv.reader(emp_data)
@@ -79,7 +79,7 @@ with open(file_to_load) as emp_data:
 
     # Loop through each row, re-grab each field and store in a new list
     for row in reader:
-
+        
         # Grab emp_ids and store it into a list
         emp_ids = emp_ids + [row[0]]
 
@@ -94,16 +94,17 @@ with open(file_to_load) as emp_data:
 
         # Grab DOB and reformat it
         # YOUR CODE HERE
+        
         from datetime import datetime
         emp_dobs = row[2]
      
         date_object = datetime.strptime(emp_dobs, '%Y-%m-%d')
 
-        emp_dobs[2] = date_object.strftime('%m-%d-%Y')
+        emp_dobs = date_object.strftime('%m/%d/%Y')
     
-               # Then store it into a list
+        # Then store it into a list
         # YOUR CODE HERE
-        emp_dobs.append(emp_dobs[2])
+        emp_dobs2.append(emp_dobs)
 
         # Grab SSN and reformat it
         # YOUR CODE HERE
@@ -119,7 +120,7 @@ with open(file_to_load) as emp_data:
 
 # Zip all of the new lists together
 # YOUR CODE HERE
-myzip = zip(emp_ids, emp_first_names, emp_last_names, emp_dobs, emp_ssns, emp_states)
+myzip = zip(emp_ids, emp_first_names, emp_last_names, emp_dobs2, emp_ssns, emp_states)
 
 # Write all of the election data to csv
 # YOUR CODE HERE
